@@ -29,3 +29,9 @@ jobs:
         run: |
           npm install remark-cli remark-preset-lint-consistent
           npx remark . --use remark-preset-lint-consistent --frail
+      # Upload artifacts
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact  # Set a name for your artifact
+          path: .  # Set the path of the files you want to upload (in this case, the entire repository)
