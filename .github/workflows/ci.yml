@@ -17,21 +17,16 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       - name: Run markdown lint
         run: |
           npm install remark-cli remark-preset-lint-consistent
           npx remark . --use remark-preset-lint-consistent --frail
-      # Upload artifacts
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+
+      - uses: actions/upload-artifact@main
         with:
-          name: my-artifact  # Set a name for your artifact
-          path: .  # Set the path of the files you want to upload (in this case, the entire repository)
+          name: remark-lint-report
+          path: public/
