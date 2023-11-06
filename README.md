@@ -50,6 +50,7 @@ endstep0-->
 
 <details id=1>
 <summary><h2>Step 1: Add a test workflow</h2></summary>
+_Emphasis should use `_` as a marker emphasis-marker_
 
 _Welcome to "GitHub Actions: Continuous Integration"! :wave:_
 
